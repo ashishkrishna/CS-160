@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <Button
+        android:id="@+id/bton_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_gravity="center"
+        android:text="LAUNCH APPLICATION"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="WELCOME TO EXCITEMENT DOCUMENTATION"
+        android:id="@+id/textView2"
+        android:layout_marginTop="88dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/background_floating_material_light"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:theme="@style/Base.AlertDialog.AppCompat" />
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ashishkrishna.excitationdocumentation" >
+
+    <uses-feature android:name="android.hardware.type.watch" />
+    <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Transparent">
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </activity>
+
+
+        <service android:name= ".SensorService"
+                 android:label="@string/app_name">
+            <receiver android:name=".BroadcastMobile2">
+                <intent-filter>
+                    <action android:name="TEST"/>
+                </intent-filter>
+            </receiver>
+
+        </service>
+
+
+        <service android:name=".Listener">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+
+        </service>
+        <activity android:name=".InvisibleActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Transparent">
+
+        </activity>
+    </application>
+
+</manifest>
