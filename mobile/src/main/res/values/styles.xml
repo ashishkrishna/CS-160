@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name = "AppTheme" parent = "@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary" type="color">@color/primaryBlue</item>
+        <item name="colorPrimaryDark" type="color">@color/primaryDarkBlue</item>
+        <item name="colorAccent" type="color">@color/whiteAccent</item>
+        <item name="actionBarStyle">@style/ActionBar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTab</item>
+    </style>
+
+    <style name="ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="logo">@drawable/action_bar_logo_32px</item>
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="background">@color/primaryBlue</item>
+        <item name="backgroundSplit">@color/primaryBlue</item>
+        <item name="backgroundStacked">@color/primaryBlue</item>
+    </style>
+
+    <style name="ActionBarTab" parent="@style/Widget.AppCompat.Light.ActionBar.TabView">
+        <item name="background">@drawable/action_tab_selector</item>
+    </style>
+    <style name="bathroomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="bathroomRatingBarBig" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstarsbig</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:maxHeight">80dp</item>
+    </style>
+</resources>

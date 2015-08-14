@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentActivity"
+    android:background="@color/bgcolor">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id = "@+id/Comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Comment"
+            android:textColor="@color/questionColor"
+            android:layout_marginBottom="12dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18dp"
+            android:layout_above="@+id/commentSelection"/>
+
+        <LinearLayout
+            android:id = "@+id/commentSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_centerHorizontal = "true"
+            android:layout_gravity = "center"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/skip_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src = "@drawable/cross_circle"
+                    android:background="@null"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="52dp"
+                    android:maxHeight="52dp"
+                    android:scaleType="fitCenter"
+                    />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mic_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/mic"
+                android:background="@null"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="52dp"
+                android:maxHeight="52dp"
+                android:scaleType="fitCenter"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/phone_icon"
+                android:layout_width="58dp"
+                android:layout_height="match_parent"
+                android:src = "@drawable/phone_share_icon"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="52dp"
+                android:maxHeight="52dp"
+                android:scaleType="fitCenter"
+                />
+
+        </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text = "Skip"
+            android:textColor="@color/questionColor"
+            android:gravity="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="12dp"
+            android:layout_below="@+id/commentSelection"
+            android:layout_alignStart="@+id/commentSelection"
+            android:id="@+id/textView"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text = "Speak"
+            android:textColor="@color/questionColor"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_alignTop="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView2" />
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text = "Phone"
+            android:textColor="@color/questionColor"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_toEndOf="@+id/Comment" />
+    </RelativeLayout>
+</LinearLayout>

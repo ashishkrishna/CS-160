@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".active"
+    android:background="@color/bgcolor">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-15dp">
+
+        <TextView
+            android:id = "@+id/active_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Sutardja Dai"
+            android:textColor="@color/questionColor"
+            android:layout_above="@+id/active_floor"
+            android:layout_marginTop="0dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id = "@+id/active_floor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "1st Floor"
+            android:textColor="@color/questionColor"
+            android:layout_above="@+id/active_distance"
+            android:layout_marginTop="0dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id = "@+id/active_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "500 ft"
+            android:textColor="@color/questionColor"
+            android:layout_above="@+id/active_info"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18dp"
+            android:layout_marginBottom="-8dp" />
+
+        <LinearLayout
+            android:id = "@+id/active_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_gravity = "center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="8dp">
+
+
+            <ImageView
+                android:id="@+id/active_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/active_female"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxHeight="30dp"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="4dp" />
+
+            <ImageView
+                android:id="@+id/active_ADA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/active_ada"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxHeight="30dp"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/active_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/three_stars"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            android:maxHeight="20dp"
+            android:scaleType="fitCenter"
+            android:layout_below="@+id/active_info"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="0dp"
+            android:layout_marginTop="8dp" />
+
+        <ImageButton
+            android:id="@+id/active_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/check_circle"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            android:maxHeight="45dp"
+            android:scaleType="fitCenter"
+            android:layout_below="@+id/active_rating"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+</LinearLayout>

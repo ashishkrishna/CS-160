@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="bathroomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">37dip</item>
+        <item name="android:maxHeight">37dip</item>
+    </style>
+
+    <style name = "Theme.NumberPicker" parent = "@android:style/Theme.Holo.NoActionBar">
+        <item name = "android:editTextStyle">@style/Widget.EditText.Black</item>
+    </style>
+
+    <style name = "Widget.EditText.Black" parent = "@android:style/Widget.EditText">
+        <item name = "android:textColor">@color/questionColor</item>
+    </style>
+
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.ashishkrishna.gps.CustomViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/pager"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context="com.example.ashishkrishna.gps.CommentActivity">
+    </com.example.ashishkrishna.gps.CustomViewPager>
+    <RatingBar
+        android:id = "@+id/ratingBar2"
+        style = "@style/bathroomRatingBarBig"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:rating = "1.0"
+        android:isIndicator="false"
+        android:layout_marginTop="10dp">
+    </RatingBar>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Submit"
+        android:oneshot="true"
+        android:id="@+id/submit_comment"
+        android:singleLine="true"
+        android:background="#fff"
+        android:clickable="true"
+        android:layout_alignParentBottom="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/userComment"
+        android:layout_below="@id/ratingBar2"
+        android:layout_above="@id/submit_comment"
+        android:layout_margin="10dp"
+        android:gravity="top|start"
+        android:textColorHighlight="#BDBDBD"
+        android:backgroundTint="#BDBDBD"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/textFieldColor" />
+
+</RelativeLayout>

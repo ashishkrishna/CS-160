@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenderActivity"
+    android:background="@color/bgcolor">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id = "@+id/Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Gender"
+            android:textColor="@color/questionColor"
+            android:layout_marginBottom="12dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18dp"
+            android:layout_above="@+id/gender_selection"/>
+
+        <LinearLayout
+            android:id = "@+id/gender_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_gravity = "center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/male_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/male_icon"
+                android:background="@null"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="52dp"
+                android:maxHeight="52dp"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/female_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/female_icon"
+                android:background="@null"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="52dp"
+                android:maxHeight="52dp"
+                android:scaleType="fitCenter"
+                />
+
+            <ImageButton
+                android:id="@+id/gender_neutral_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/gender_neutral_icon"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="52dp"
+                android:maxHeight="52dp"
+                android:scaleType="fitCenter"
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

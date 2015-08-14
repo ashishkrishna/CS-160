@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="84dp"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textSuggested"
+        android:textStyle="bold"
+        android:maxLength="50"
+        android:ellipsize="marquee"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+    </TextView>
+    <TextView
+        android:id="@+id/lat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+    </TextView>
+    <TextView
+        android:id="@+id/lon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/lat" >
+    </TextView>
+    <ImageView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" >
+    </ImageView>
+    <ImageView
+        android:id="@+id/ada"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_toStartOf="@id/gender"
+        android:layout_marginEnd="5dp">
+    </ImageView>
+    <RatingBar
+        android:id = "@+id/ratingBar"
+        style = "@style/bathroomRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:rating = "1.0"
+        android:isIndicator="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
+    <TextView
+        android:id="@+id/directions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Directions >"
+        android:textColor="@color/textSuggested"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
