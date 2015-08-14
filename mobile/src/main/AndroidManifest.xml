@@ -113,7 +113,7 @@
         </service>
 
         <activity android:name=".SettingActivity"
-            android:label = "Setting"
+            android:label = "Settings"
             android:parentActivityName=".MainActivity">
 
             <meta-data

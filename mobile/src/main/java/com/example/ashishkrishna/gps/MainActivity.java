@@ -5,12 +5,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -70,6 +72,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -82,6 +85,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -378,9 +382,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 @Override
                 public boolean setViewValue(View view, Object data, String textRepresentation) {
                     if (view.getId() == R.id.address) {
-                        String[] latandlon = data.toString().split(",");
-                        FirstServicer.longandlat(Double.parseDouble(latandlon[0]), Double.parseDouble(latandlon[1]));
-                        ((TextView) view).setText(FirstServicer.addressln);
+                        //String[] latandlon = data.toString().split(",");
+                        //FirstServicer.longandlat(Double.parseDouble(latandlon[0]), Double.parseDouble(latandlon[1]));
+                        ((TextView) view).setText(data.toString());
                         return true;
                     }
                     if (view.getId() == R.id.ratingBar) {
@@ -665,7 +669,18 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                         Map<String, String> listItem = new HashMap<String, String>(2);
                         listItem.put("Lat", current.getString(0));
                         listItem.put("Lon", current.getString(1));
-                        listItem.put("Address", current.getString(0)+","+current.getString(1));
+                        PlacesTask aleph1 = new PlacesTask();
+                        String tempaddr = " ";
+                        try {
+                            tempaddr = aleph1.execute(current.getString(0), current.getString(1)).get();
+                        }
+                        catch(InterruptedException f) {
+                            f.printStackTrace();
+                        }
+                        catch(ExecutionException d) {
+                            d.printStackTrace();
+                        }
+                        listItem.put("Address", tempaddr);
                         listItem.put("Rating", current.getString(2));
                         listItem.put("Ada", current.getString(3));
                         listItem.put("Gender", current.getString(4));
@@ -680,6 +695,60 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 //Log.w("Got here", "Got here");
             }
 
+        }
+
+        public class PlacesTask extends AsyncTask<String, Void, String> {
+
+            protected String doInBackground(String... params) {
+                String url = "https://maps.googleapis.com/maps/api/place/search/json?key=AIzaSyCN95maHJZw-xD4dLahrlbRuntEXqSz28k&location=" + params[0] + "," + params[1]+"&radius=25&sensor=false&types=establishment";
+                HttpResponse response;
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpGet placesGet = new HttpGet(url);
+                String responseString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+                try {
+                    response = httpclient.execute(new HttpGet(url));
+                    HttpEntity entity = response.getEntity();
+                    InputStream stream = entity.getContent();
+                    int b;
+                    while ((b = stream.read()) != -1) {
+                        stringBuilder.append((char) b);
+                    }
+                } catch (ClientProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String returnme = "";
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject = new JSONObject(stringBuilder.toString());
+
+                    returnme = ((JSONArray)jsonObject.get("results")).getJSONObject(0)
+                            .getString("name");
+                    return returnme;
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+//argumes = responseString;
+// Log.w(argumes, "This is from Database");
+
+//Log.w("Params", messages.toString());
+                return " ";
+
+
+            }
+
+            protected void onPostExecute(JSONArray itemsList) {
+// data.clear();
+
+
+            }
         }
     }
 
@@ -737,8 +806,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             //start modifications
             //set restroom name in top line
             TextView restroomName = (TextView) errorReport.findViewById(R.id.nameOfRestroom);
-            String passed_in_name = "Sutardja Dai 3rd Floor";
-            restroomName.setText("Reporting " + passed_in_name);
+            String passed_in_name = "Soda Hall";
+            if (address != null) {
+                restroomName.setText("Reporting " + address);
+            } else {
+                restroomName.setText("Reporting " + passed_in_name);
+            }
 
             //onclick to make textfield visible for commenting
             View.OnClickListener enterText = new View.OnClickListener(){

@@ -149,6 +149,8 @@ public class BathroomActivity extends ActionBarActivity {
         //Log.w("Rating:", rating);
         //Log.w("Ada:", ada);
         //Log.w("Gender", gender);
+        getSupportActionBar().setTitle(address);
+        setAddress(address);
         setRating(rating);
         if (ada.equalsIgnoreCase("true")) {
             ((ImageView) findViewById(R.id.ada)).setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.bathroom_page_ada_32px, null));
@@ -354,11 +356,10 @@ public class BathroomActivity extends ActionBarActivity {
         //adapter.notifyDataSetChanged();
         //rating = FirstServicer.rating;
         //setRating(rating);
-        FirstServicer.longandlat(Double.parseDouble(lat), Double.parseDouble(lon));
-        address = FirstServicer.addressln;
-        ((TextView) findViewById(R.id.address)).setText(FirstServicer.addressln);
-        getSupportActionBar().setTitle(address);
-        Log.w("Address found", "  " + FirstServicer.addressln);
+        //FirstServicer.longandlat(Double.parseDouble(lat), Double.parseDouble(lon));
+        //address = FirstServicer.addressln;
+        //((TextView) findViewById(R.id.address)).setText(FirstServicer.addressln);
+        //Log.w("Address found", "  " + FirstServicer.addressln);
 
     }
 
@@ -446,6 +447,11 @@ public class BathroomActivity extends ActionBarActivity {
         float ratingVal = Float.parseFloat(rating);
         View ratingBar = findViewById(R.id.ratingBar);
         ((RatingBar) ratingBar).setRating(ratingVal);
+    }
+
+    public void setAddress(String address) {
+        TextView addressText = (TextView) findViewById(R.id.address);
+        addressText.setText(address);
     }
 
     @Override
