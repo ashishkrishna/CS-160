@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".CmtReceivedActivity"
+    android:background="@color/bgcolor"
+    android:gravity = "center"
+    >
+
+
+    <ImageButton
+        android:id="@+id/check_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/check_circle"
+        android:background="@null"
+        android:adjustViewBounds="true"
+        android:maxWidth="60dp"
+        android:maxHeight="60dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text = "Your comment has been received!"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/questionColor"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        />
+
+</LinearLayout>

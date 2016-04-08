@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGrey">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "I'm looking for:"
+        android:textSize="18dp"
+        android:textColor="@color/titleColor"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation = "horizontal"
+        android:layout_gravity = "center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageButton
+                android:id="@+id/male_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/male_setting_control"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="135dp"
+                android:maxHeight="135dp"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id = "@+id/male_title"
+                android:layout_marginTop="12dp"
+                android:layout_width="135dp"
+                android:layout_below="@id/male_icon"
+                android:layout_height="wrap_content"
+                android:text = "Male"
+                android:textSize="18dp"
+                android:textColor="@color/titleColor"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical"
+            android:layout_marginTop="30dp">
+
+            <ImageButton
+                android:id="@+id/female_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/female_setting_control"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="1350dp"
+                android:maxHeight="135dp"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id = "@+id/female_title"
+                android:layout_marginTop="12dp"
+                android:layout_width="135dp"
+                android:layout_below="@id/female_icon"
+                android:layout_height="wrap_content"
+                android:text = "Female"
+                android:textSize="18dp"
+                android:textColor="@color/titleColor"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation = "horizontal"
+        android:layout_gravity = "center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageButton
+                android:id="@+id/genderneutral_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/gender_neutral_setting_control"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="135dp"
+                android:maxHeight="135dp"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id = "@+id/genderNeutral_title"
+                android:layout_marginTop="12dp"
+                android:layout_width="135dp"
+                android:layout_below="@id/genderneutral_icon"
+                android:layout_height="wrap_content"
+                android:text = "Gender Neutral"
+                android:textSize="18dp"
+                android:textColor="@color/titleColor"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical"
+            android:layout_marginTop="30dp">
+
+            <ImageButton
+                android:id="@+id/ada_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/ada_setting_control"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:maxWidth="1350dp"
+                android:maxHeight="135dp"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:id = "@+id/ada_title"
+                android:layout_marginTop="12dp"
+                android:layout_width="135dp"
+                android:layout_below="@id/ada_icon"
+                android:layout_height="wrap_content"
+                android:text = "ADA Accessible"
+                android:textSize="18dp"
+                android:textColor="@color/titleColor"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

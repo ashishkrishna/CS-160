@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MicListeningActivity"
+    android:background="@color/bgcolor"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Your comment:"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/questionColor"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/txtSpeechInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/questionColor"
+        android:textSize="14dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20px"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation = "horizontal"
+        android:layout_gravity = "center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageButton
+            android:id="@+id/confirm_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/check_circle"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            android:maxWidth="52dp"
+            android:maxHeight="52dp"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="40dp"/>
+
+        <ImageButton
+            android:id="@+id/comment_again_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/cross_circle"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            android:maxWidth="52dp"
+            android:maxHeight="52dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

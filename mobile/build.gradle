@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc3"
+
+    defaultConfig {
+        applicationId "com.example.ashishkrishna.gps"
+        minSdkVersion 22
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            resValue "string", "google_maps_api_key", " AIzaSyAB5y7jiznZnDet22OL0b3hOElxxrlhGu4"
+        }
+        release {
+            resValue "string", "google_maps_api_key", " AIzaSyAB5y7jiznZnDet22OL0b3hOElxxrlhGu4"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    wearApp project(':wear')
+    compile 'com.android.support:support-v13:22.2.0+'
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services-wearable:+'
+    compile 'com.google.android.gms:play-services-maps:6.5.87'
+}
